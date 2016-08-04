@@ -1,0 +1,49 @@
+Pindrop Tooling Team
+Interview Coding Challenge
+
+=== Introduction ===
+
+Thank you for accepting the Pindrop Tooling Team coding challenge! The purpose
+of this challenge is twofold: One, it gives you a ballpark idea of the type
+of problem our team members could be faced with on a day-to-day basis.
+Two, it gives us an idea of how you approach technical problems and write code.
+
+The next section of this readme contains a technical explanation of the
+challenge we'd like you to tackle. We designed this challenge to take
+approximately 1 hour to complete. Depending on your skill level and existing
+understanding of the technologies used in this challenge, you may take more or
+less time. If you find yourself stuck or taking more than about 2 hours, please
+submit what you have along with an explanation of where you ended up. We will
+consider giving "partial credit."
+
+=== Technical Challenge ===
+
+Your solution to this challenge will be a github.com pull-request to this
+project containing the code you write (and/or modify) to solve the following
+problem: 
+
+The file 'rtp_gap.py' in this project is intended to identify gaps in streams of
+RTP packets within PCAP files. For a given RTP flow, We define a gap as one or
+more packets whose sequence number(s) are missing or out-of-order. When we use
+'rtp_gap.py' to analyze the file 'test/rtp_gaps.pcap' (also in this project),
+we find that it does not identify gaps as we expected.
+
+Please fix this project as you see fit so that it identifies RTP gaps as you
+think it should. Include in commit or pull-request comments any assumptions
+you need to make in order to complete this challenge.
+
+
+=== Supplimentary Info ===
+
+Project Dependencies: python, pypcapfile
+
+pypcapfile: https://pythonhosted.org/pypcapfile/installing.html
+
+To install these dependencies on Ubuntu 12.04:
+sudo apt-get install python
+sudo apt-get install python-pip
+sudo pip install pypcapfile
+
+RTP Info:
+https://en.wikipedia.org/wiki/Real-time_Transport_Protocol
+
