@@ -7,6 +7,8 @@ import rtp
 import sys
 
 
+# Tested with Python 2.7 and pypcapfile 0.11.1
+
 if len(sys.argv) < 2:
   print "Usage: python rtp_gap.py <pcap>\n"
 

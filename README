@@ -20,7 +20,8 @@ consider giving "partial credit."
 
 Your solution to this challenge will be a github.com pull-request to this
 project containing the code you write (and/or modify) to solve the following
-problem: 
+problem. We designed this problem on Ubuntu 12.04, but you may solve it on
+the OS of your choice.
 
 The file 'rtp_gap.py' in this project is a simple script intended to identify
 gaps in streams of RTP packets within PCAP files. For a given RTP flow, We
@@ -35,11 +36,13 @@ you need to make in order to complete this challenge.
 
 === Supplimentary Info ===
 
-Project Dependencies: python, pypcapfile
+Project Dependencies:
+python 2.7
+pypcapfile 0.11.1
 
 pypcapfile: https://pythonhosted.org/pypcapfile/installing.html
 
-To install these dependencies on Ubuntu 12.04:
+To install these dependencies on bare Ubuntu 12.04:
 sudo apt-get install python
 sudo apt-get install python-pip
 sudo pip install pypcapfile
