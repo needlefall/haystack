@@ -11,6 +11,9 @@ import sys
 
 
 def get_udp_packet(raw_packet):
+    """
+    Given a raw packet from a capfile, returns a udp packet object if it can, otherwise None
+    """
     eth_frame = ethernet.Ethernet(raw_packet)
 
     # Is it IP?
@@ -32,6 +35,9 @@ def is_rtp(udp_packet):
         return False
 
 def print_gaps(capfile):
+    """
+    Given a capfile instance, detects RTP packets and prints packet sequence gaps for each SSRC.
+    """
     last_seqs = defaultdict(int)
     for packet in capfile.packets:
         udp_packet = get_udp_packet(packet.raw())
@@ -50,6 +56,9 @@ def print_gaps(capfile):
             last_seqs[rtp_pkt.ssrc] = rtp_pkt.seq
 
 def load_capfile(filename):
+    """
+    Takes in filename, returns capfile instance.
+    """
     with open(filename, 'rb') as raw_file:
         capfile = savefile.load_savefile(raw_file, verbose=False)
 
