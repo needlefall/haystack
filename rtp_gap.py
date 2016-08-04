@@ -69,5 +69,6 @@ if __name__ == '__main__':
     if len(sys.argv) < 2:
         sys.exit("Usage: python rtp_gap.py <pcap>\n")
 
-    capfile = load_capfile(sys.argv[1])
-    print_gaps(capfile)
+    for filename in sys.argv[1:]:
+        capfile = load_capfile(filename)
+        print_gaps(capfile)
