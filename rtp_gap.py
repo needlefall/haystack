@@ -22,21 +22,14 @@ def get_udp_packet(raw_packet):
             return udp.UDP(binascii.unhexlify(ip_packet.payload))
 
 def is_rtp(udp_packet):
-    if udp_packet is None:
-        return False
-    
     if udp_packet is not None and (
             udp_packet.dst_port > 16383 or
             udp_packet.src_port > 16383 and
             not udp_packet.dst_port & 1
     ):
         return True
-
-def load_capfile(filename):
-    with open(filename, 'rb') as raw_file:
-        capfile = savefile.load_savefile(raw_file, verbose=False)
-
-    return capfile
+    else:
+        return False
 
 def print_gaps(capfile):
     last_seqs = defaultdict(int)
@@ -55,6 +48,13 @@ def print_gaps(capfile):
 
 
             last_seqs[rtp_pkt.ssrc] = rtp_pkt.seq
+
+def load_capfile(filename):
+    with open(filename, 'rb') as raw_file:
+        capfile = savefile.load_savefile(raw_file, verbose=False)
+
+    return capfile
+
 
 if __name__ == '__main__':
     if len(sys.argv) < 2:
